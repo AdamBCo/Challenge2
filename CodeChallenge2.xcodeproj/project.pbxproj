@@ -92,18 +92,18 @@
 			children = (
 				66E17FC719E820F8005ECD62 /* AppDelegate.h */,
 				66E17FC819E820F8005ECD62 /* AppDelegate.m */,
-				66E17FCA19E820F8005ECD62 /* ViewController.h */,
-				66E17FCB19E820F8005ECD62 /* ViewController.m */,
-				66E17FCD19E820F8005ECD62 /* Main.storyboard */,
-				66E17FEF19E8341C005ECD62 /* WebViewController.h */,
-				66E17FF019E8341C005ECD62 /* WebViewController.m */,
+				66E17FE919E82200005ECD62 /* City.h */,
+				66E17FEA19E82200005ECD62 /* City.m */,
 				66E17FEC19E82A69005ECD62 /* DetailViewController.h */,
 				66E17FED19E82A69005ECD62 /* DetailViewController.m */,
 				66E17FD019E820F8005ECD62 /* Images.xcassets */,
 				66E17FD219E820F8005ECD62 /* LaunchScreen.xib */,
+				66E17FCD19E820F8005ECD62 /* Main.storyboard */,
 				66E17FC319E820F8005ECD62 /* Supporting Files */,
-				66E17FE919E82200005ECD62 /* City.h */,
-				66E17FEA19E82200005ECD62 /* City.m */,
+				66E17FCA19E820F8005ECD62 /* ViewController.h */,
+				66E17FCB19E820F8005ECD62 /* ViewController.m */,
+				66E17FEF19E8341C005ECD62 /* WebViewController.h */,
+				66E17FF019E8341C005ECD62 /* WebViewController.m */,
 			);
 			path = CodeChallenge2;
 			sourceTree = "<group>";
@@ -430,6 +430,7 @@
 				66E17FE519E820F9005ECD62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66E17FE619E820F9005ECD62 /* Build configuration list for PBXNativeTarget "CodeChallenge2Tests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +439,7 @@
 				66E17FE819E820F9005ECD62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -24,19 +24,23 @@
     City *cityOne = [[City alloc]init];
     cityOne.cityName = @"Charleston";
     cityOne.stateName = @"South Carolina";
-    cityOne.website = @"http://www.charlestoncvb.com";
+    cityOne.website = @"http://en.wikipedia.org/wiki/charleston";
+    cityOne.cityImage = [UIImage imageNamed:@"charleston"];
     City *cityTwo = [[City alloc]init];
     cityTwo.cityName = @"New York";
     cityTwo.stateName = @"New York";
     cityTwo.website = @"http://en.wikipedia.org/wiki/New_York";
+    cityTwo.cityImage = [UIImage imageNamed:@"newyork"];
     City *cityThree = [[City alloc]init];
     cityThree.cityName = @"Houston";
     cityThree.stateName = @"Texas";
-    cityThree.website = @"http://www.houstontx.gov";
+    cityThree.website = @"http://en.wikipedia.org/wiki/houston";
+    cityThree.cityImage = [UIImage imageNamed:@"houston"];
     City *cityFour = [[City alloc]init];
     cityFour.cityName = @"Denver";
     cityFour.stateName = @"Colorado";
     cityFour.website = @"http://en.wikipedia.org/wiki/Denver";
+    cityFour.cityImage = [UIImage imageNamed:@"denver"];
     
     self.arrayOfLocations = [[NSMutableArray alloc] initWithObjects:cityOne, cityTwo, cityThree, cityFour, nil];
     
@@ -60,11 +64,14 @@
     }
 }
 
+
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     City *city = [self.arrayOfLocations objectAtIndex:indexPath.row];
     cell.textLabel.text = city.cityName;
     cell.detailTextLabel.text = city.stateName;
+    cell.imageView.image = city.cityImage;
     return cell;
     
 }
@@ -73,6 +80,8 @@
     [self.arrayOfLocations removeObjectAtIndex:indexPath.row];
     [self.cityTableView reloadData];
 }
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)cell{
     if ([segue.identifier isEqualToString:@"SimpleSegue"])
     {

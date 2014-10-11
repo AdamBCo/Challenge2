@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 
 @interface City : NSObject
 
 @property NSString *cityName;
 @property NSString *stateName;
 @property NSString *website;
-
+@property UIImage *cityImage;
 
 
 @end

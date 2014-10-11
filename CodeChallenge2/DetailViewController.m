@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *websiteLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *websiteImage;
 
 @end
 
@@ -27,9 +28,9 @@
     [super viewDidLoad];
     self.cityNameLabel.text = self.selectedCity.cityName;
     self.stateNameLabel.text = self.selectedCity.stateName;
+    self.websiteImage.image = self.selectedCity.cityImage;
     self.cityNameTextField.hidden = YES;
     self.stateNameTextField.hidden = YES;
-    
     
 }
 - (IBAction)onEditButtonPressed:(id)sender {
@@ -53,6 +54,12 @@
     
 }
 
+-(void)passURLForSelectedCity:(NSString *)string{
+    self.selectedCity.website = string;
+    
+    
+}
+
 -(IBAction)onTapped:(UITapGestureRecognizer *)sender{
     self.websiteLabel.backgroundColor = [UIColor greenColor];
     
@@ -60,7 +67,10 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     WebViewController *webViewController = segue.destinationViewController;
-    webViewController.websiteURL = self.selectedCity.website;
+    
+    webViewController.websiteURL =
+    
+    self.selectedCity.website;
 }
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
