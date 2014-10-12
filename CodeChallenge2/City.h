@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@protocol CityDelegate
+
+-(void)passURLString:(NSString *)urlString;
+
+@end
+
 
 @interface City : NSObject
 
@@ -16,6 +22,9 @@
 @property NSString *stateName;
 @property NSString *website;
 @property UIImage *cityImage;
+@property id<CityDelegate> delegate;
+
+-(void)createString;
 
 
 @end

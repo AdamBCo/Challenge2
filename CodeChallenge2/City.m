@@ -10,6 +10,14 @@
 
 @implementation City
 
+-(void)createString{
+    NSString *city = self.cityName;
+    NSString *url = @"http://en.wikipedia.org/wiki/";
+    NSString *cityURL = [city stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSString *urlString = [url stringByAppendingString:cityURL];
+    [self.delegate passURLString:urlString];
+}
+
 
 
 @end

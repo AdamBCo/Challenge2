@@ -9,7 +9,7 @@
 #import "DetailViewController.h"
 #import "WebViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <CityDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *cityNameTextField;
 
@@ -31,6 +31,8 @@
     self.websiteImage.image = self.selectedCity.cityImage;
     self.cityNameTextField.hidden = YES;
     self.stateNameTextField.hidden = YES;
+    self.selectedCity.delegate = self;
+    [self.selectedCity createString];
     
 }
 - (IBAction)onEditButtonPressed:(id)sender {
@@ -54,9 +56,8 @@
     
 }
 
--(void)passURLForSelectedCity:(NSString *)string{
+-(void)passURLString:(NSString *)string{
     self.selectedCity.website = string;
-    
     
 }
 
@@ -68,9 +69,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     WebViewController *webViewController = segue.destinationViewController;
     
-    webViewController.websiteURL =
-    
-    self.selectedCity.website;
+    webViewController.websiteURL = self.selectedCity.website;
 }
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
